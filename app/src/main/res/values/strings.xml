@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Composer</string>
+    <string name="title_activity_first_test">FirstTestActivity</string>
+</resources>
