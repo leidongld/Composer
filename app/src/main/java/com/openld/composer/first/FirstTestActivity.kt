@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -154,7 +156,11 @@ private fun ProductCard(cardBean: ProductCardBean) {
                     .show()
             }
     ) {
-        Column() {
+        Column(
+            modifier = Modifier
+                .background(color = colorResource(id = R.color.purple_100))
+                .padding(16.dp)
+        ) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -165,11 +171,11 @@ private fun ProductCard(cardBean: ProductCardBean) {
                     painter = painterResource(id = cardBean.imageId),
                     contentDescription = cardBean.title,
                     Modifier
-                        .size(72.dp)
+                        .size(96.dp)
                         .clip(CircleShape)
                         .border(
-                            width = 2.dp,
-                            color = MaterialTheme.colors.secondary,
+                            width = 4.dp,
+                            color = Color.White,
                             shape = CircleShape
                         )
                         .align(alignment = Alignment.CenterVertically)
